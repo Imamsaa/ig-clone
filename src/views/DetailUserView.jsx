@@ -1,7 +1,75 @@
+import { FaBookmark, FaCog, FaTh } from "react-icons/fa"
 function DetailUserView() {
     return (
         <>
-            <h1>Detail Users</h1>
+            <main className="flex-1 flex justify-center pb-16 md:pb-0">
+                <div className="flex justify-center min-h-screen bg-base-100">
+                    <div className="w-full max-w-4xl px-4">
+                        <div className="flex flex-col md:flex-row gap-8 py-10">
+                            <div className="flex justify-center md:w-1/3">
+                                <div className="avatar">
+                                    <div className="w-36 rounded-full">
+                                        <img src="https://i.praVatar.cc/300?img=1" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex-1 space-y-4">
+                                <div className="flex gap-4 items-center flex-wrap">
+                                    <h2 className="text-xl font-light">
+                                        Fullname
+                                    </h2>
+                                    <button className="btn btn-sm btn-primary">Follow</button>
+                                    <FaCog className="cursor-pointer text-xl"/>
+                                </div>
+                                <div className="flex gap-6 text-sm">
+                                    <p>
+                                        <span className="font-bold block">
+                                            24
+                                        </span>
+                                        Post
+                                    </p>
+                                    <p>
+                                        <span className="font-bold block">
+                                            1024
+                                        </span>
+                                        Followers
+                                    </p>
+                                    <p>
+                                        <span className="font-bold block">
+                                            505
+                                        </span>
+                                        Following
+                                    </p>
+                                </div>
+                                <div className="text-sm">
+                                    <p className="font-semibold">Username</p>
+                                    <p>Ngoding bareng Imamsaa</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="divider"></div>
+                        <div className="flex justify-center gap-10 text-sm uppercase tracking-widest">
+                            <button className="py-3 flex items-center border-b-2 gap-2 border-white">
+                                <FaTh /> Posts
+                            </button>
+                            <button className="py-3 flex items-center border-b-2 gap-2 border-gray-400">
+                                <FaBookmark /> Bookmark
+                            </button>
+                        </div>
+                        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-1 py-10">
+                            {
+                                [1,2,3,4,5,6,7,8,9].map((post) => {
+                                    return (
+                                        <div key={post} className="overflow-hidden cursor-progress aspect-square">
+                                            <img src={`https://i.praVatar.cc/300?img=${post}`} alt="" className="w-full h-full object-cover hover:scale-110 transition" />
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
+            </main>
         </>
     )
 }
